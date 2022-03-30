@@ -8,11 +8,15 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import tw from "twrnc";
+import { useNavigation } from "@react-navigation/native";
 
 const Signin = () => {
   const [email, setEmail] = useState("");
   const [number, setNumber] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigation = useNavigation();
+
   return (
     <KeyboardAvoidingView style={[tw`flex-1 items-center pt-14`]}>
       <Text style={[tw`text-2xl font-medium`]}>Sign In</Text>
@@ -54,10 +58,17 @@ const Signin = () => {
         <Text style={[tw`text-lg font-medium`]}>OR</Text>
       </View>
       <View style={[tw`mt-7`]}>
-        <Text style={[tw`text-lg font-medium`]}>
-          Don't have an account?{" "}
-          <Text style={[tw`text-emerald-500`]}>Sign Up</Text>
-        </Text>
+        <TouchableOpacity>
+          <Text style={[tw`text-lg font-medium`]}>
+            Don't have an account?{" "}
+            <Text
+              onPress={() => navigation.navigate("SignUp")}
+              style={[tw`text-emerald-500`]}
+            >
+              Sign Up
+            </Text>
+          </Text>
+        </TouchableOpacity>
       </View>
     </KeyboardAvoidingView>
   );
