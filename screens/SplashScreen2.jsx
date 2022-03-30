@@ -7,8 +7,10 @@ import {
 } from "react-native";
 import React from "react";
 import tw from "twrnc";
+import { useNavigation } from "@react-navigation/native";
 
 const SplashScreen2 = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView>
       <View style={[tw`pt-20`]}>
@@ -28,8 +30,9 @@ const SplashScreen2 = () => {
         </Text>
       </View>
       <TouchableOpacity
+        onPress={() => navigation.navigate("Signin")}
         style={[
-          tw`bg-emerald-500 h-[55px] mx-10 rounded-3xl flex justify-center items-center mt-14`,
+          tw`bg-emerald-500 shadow-2xl shadow-emerald-500 h-[55px] mx-10 rounded-3xl flex justify-center items-center mt-14`,
         ]}
       >
         <Text style={[tw`text-white text-xl`]}>Get Started</Text>

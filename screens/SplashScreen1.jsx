@@ -32,7 +32,7 @@ const SplashScreen1 = () => {
       <TouchableOpacity
         onPress={() => navigation.navigate("SplashScreen2")}
         style={[
-          tw`bg-emerald-500 h-[55px] mx-10 rounded-3xl flex justify-center items-center mt-16`,
+          tw`bg-emerald-500 shadow-2xl shadow-emerald-500 h-[55px] mx-10 rounded-3xl flex justify-center items-center mt-16`,
         ]}
       >
         <Text style={[tw`text-white text-xl`]}>Get Started</Text>
