@@ -8,8 +8,10 @@ import {
 } from "react-native";
 import React from "react";
 import tw from "twrnc";
+import { useNavigation } from "@react-navigation/native";
 
 const SplashScreen1 = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView>
       <View style={[tw`pt-30`]}>
@@ -28,6 +30,7 @@ const SplashScreen1 = () => {
         </Text>
       </View>
       <TouchableOpacity
+        onPress={() => navigation.navigate("SplashScreen2")}
         style={[
           tw`bg-emerald-500 h-[55px] mx-10 rounded-3xl flex justify-center items-center mt-16`,
         ]}
