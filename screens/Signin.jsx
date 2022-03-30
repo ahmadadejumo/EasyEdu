@@ -43,6 +43,15 @@ const Signin = () => {
       >
         <Text style={[tw`text-xl text-white`]}>Sign In</Text>
       </TouchableOpacity>
+      <View style={[tw`pt-7`]}>
+        <Text style={[tw`text-lg font-medium`]}>OR</Text>
+      </View>
+      <View style={[tw`mt-7`]}>
+        <Text style={[tw`text-lg font-medium`]}>
+          Don't have an account?{" "}
+          <Text style={[tw`text-emerald-500`]}>Sign Up</Text>
+        </Text>
+      </View>
     </KeyboardAvoidingView>
   );
 };
