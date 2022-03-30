@@ -6,10 +6,13 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import tw from "twrnc";
 
 const Signin = () => {
+  const [email, setEmail] = useState("");
+  const [number, setNumber] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <KeyboardAvoidingView style={[tw`flex-1 items-center pt-14`]}>
       <Text style={[tw`text-2xl font-medium`]}>Sign In</Text>
@@ -20,6 +23,8 @@ const Signin = () => {
       <View>
         <Text style={[tw`text-lg font-medium`]}>Email/Phone Number</Text>
         <TextInput
+          value={email || number}
+          onChangeText={(text) => setEmail(text) || setNumber(text)}
           placeholder="Enter email or phone number"
           style={[
             tw`w-[350px] h-[50px] border border-gray-400 rounded-xl px-4 mt-3 text-base`,
@@ -27,6 +32,8 @@ const Signin = () => {
         />
         <Text style={[tw`text-lg font-medium pt-5`]}>Password</Text>
         <TextInput
+          value={password}
+          onChangeText={(text) => setPassword(text)}
           placeholder="Enter password"
           style={[
             tw`w-[350px] h-[50px] border border-gray-400 rounded-xl px-4 mt-3 text-base`,
